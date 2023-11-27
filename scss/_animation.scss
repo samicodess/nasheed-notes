@@ -1,0 +1,23 @@
+
+// Loading Screen
+@keyframes loading {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-2rem) rotate(0);
+  }
+  80% {
+    transform: translateY(-2rem) rotate(360deg);
+  }
+}
+
+@keyframes loading-2 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

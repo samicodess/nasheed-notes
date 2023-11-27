@@ -1,0 +1,151 @@
+$color-bg: #272624;
+$color-text: #fdfffe;
+$color-dark-1: #333333;
+$color-dark-2: #3d3d3f;
+$color-white: #eee;
+$color-blue: rgb(62, 62, 219);
+
+$large: 56rem;
+$mobile: 37rem;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  font-size: 65.4%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.main {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  height: 100vh;
+
+  @media only screen and (max-width: $large) {
+    display: block;
+  }
+}
+
+.nav-sec {
+  background-color: $color-dark-1;
+  overflow: hidden;
+
+  @media only screen and (max-width: $large) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: 16;
+  }
+}
+
+.nasheed-sec {
+  height: calc(100vh - 3.4rem);
+  overflow: scroll;
+  overscroll-behavior: contain;
+  padding-bottom: 10vh;
+}
+
+.heading-sec {
+  padding: 0.6rem 0rem;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  margin: 1rem 2rem;
+  color: $color-text;
+}
+
+.heading-sec::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(to left, $color-bg, $color-blue, $color-bg);
+}
+.heading-3 {
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 1.7px;
+  color: $color-text;
+  cursor: pointer;
+}
+.heading-3:hover {
+  color: $color-blue;
+}
+
+.nasheed-artist-name {
+  letter-spacing: 2px;
+  color: $color-white;
+  font-size: 1em;
+  cursor: pointer;
+}
+.nasheed-artist-name:hover {
+  color: $color-blue;
+}
+.play-btn {
+  font-size: 4em;
+  color: $color-white;
+  cursor: pointer;
+}
+.play-btn:hover {
+  color: $color-blue;
+  
+}
+.scroll-bar-hide::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.phone-disable {
+  @media only screen and (max-width: $mobile) {
+    display: none !important;
+  }
+}
+
+span {
+  -webkit-tap-highlight-color: red !important;
+}
+
+// loading
+.loading-sec {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-dark-1;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $color-white;
+  line-height: 2rem;
+  transition: opacity 1s ease-in;
+
+  &__text {
+    letter-spacing: 2px;
+  }
+  &__n {
+    display: inline-block;
+    color: $color-blue;
+    animation: loading 3s infinite cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &__wait-text {
+    animation: loading-2 4s infinite;
+  }
+  &__legal {
+    position: absolute;
+    bottom: 5vh;
+  }
+}
